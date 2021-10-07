@@ -25,4 +25,6 @@ Guaranteed constraints:
 The sum of the two inputs.
 */
 
-
+function add(param1, param2) {
+return param1 + param2;
+}

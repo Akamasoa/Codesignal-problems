@@ -1,4 +1,8 @@
-Ratiorg got of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than the previous one exactly by . He may need some additional statues to be able to accomplish that. Help him figure out the minimum number of additional statues needed.statues1
+/*
+Ratiorg got of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. 
+Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than 
+the previous one exactly by . He may need some additional statues to be able to accomplish that. Help him figure out the minimum 
+number of additional statues needed.statues1
 
 Example
 
@@ -21,4 +25,17 @@ Guaranteed constraints:
 
 [output] integer
 
+
+The minimal number of statues that need to be added to existing such that it contains every integer size from an interval 
+(for some ) and no other sizes.statues[L, R]L, R
+
+[JavaScript] Syntax Tips
+
+// Prints help message to the console
+// Returns a string
+function helloWorld(name) {
+    console.log("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}
+*/
 

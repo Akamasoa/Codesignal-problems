@@ -56,4 +56,17 @@ function helloWorld(name) {
 }
 */
 
-
+function matrixElementsSum(matrix) {
+price = 0;
+    for(let i = 0; i < matrix.length; i++)
+        for(let x = 0; x < matrix[0].length; x++){
+            if(i == 0)
+                price += matrix[i][x];
+            else{
+                if(matrix[i - 1][x] == 0)
+                    matrix[i][x] = 0;
+                price += matrix[i][x];
+            }
+        }
+    return price;         
+}

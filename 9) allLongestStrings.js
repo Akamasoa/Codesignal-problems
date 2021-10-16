@@ -31,3 +31,8 @@ function helloWorld(name) {
     return "Hello, " + name;
 }
 */
+
+function allLongestStrings(inputArray) {
+let maxLength = Math.max(...inputArray.map((a) => a.length));
+    return inputArray.filter((a) => a.length === maxLength);
+}

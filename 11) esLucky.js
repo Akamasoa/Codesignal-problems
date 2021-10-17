@@ -33,3 +33,22 @@ function helloWorld(name) {
     return "Hello, " + name;
 }
 */
+
+function isLucky(n) {
+n = n.toString();
+  let half = n.length / 2;
+  let first = 0;
+  let second = 0;
+  for (let i = 0; i < half; i++) {
+    first += +n[i];
+  }
+  for (let j = half; j < n.length; j++) {
+    second += +n[j];
+  }
+  
+  if (first != second) {
+    return false;
+  } else {
+    return true;
+  }
+}

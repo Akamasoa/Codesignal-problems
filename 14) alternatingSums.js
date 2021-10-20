@@ -31,3 +31,12 @@ function helloWorld(name) {
     return "Hello, " + name;
 }
 */
+
+const alternatingSums = array => {
+let team1 = 0, team2 = 0;
+    array.forEach((num, index) => {
+        if(index % 2 === 0) team1 += num;
+        else team2 += num;
+    })
+    return [team1, team2];
+}

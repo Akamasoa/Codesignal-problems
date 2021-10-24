@@ -33,3 +33,20 @@ function helloWorld(name) {
 }
 */
 
+function palindromeRearranging(inputString) {
+let palindrome = true;
+    let center = 0;
+    let array = inputString.split("");
+    while (palindrome&&array.length>0){
+        if (array.indexOf(array[0],1)>0)
+            array.splice(array.indexOf(array[0],1),1);
+        else
+            if (center<1)
+                center++;
+            else 
+                palindrome = false;
+        array = array.slice(1);
+        
+    }
+    return palindrome;
+}

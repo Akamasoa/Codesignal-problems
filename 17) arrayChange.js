@@ -31,4 +31,19 @@ function helloWorld(name) {
 }
 */
 
+function arrayChange(inputArray) {
+let minDiff = 0;
 
+  for (let i = 1; i < inputArray.length; i++) {
+      
+    let localDiff = 0;
+    if (inputArray[i] <= inputArray[i - 1]) {
+      
+      localDiff = inputArray[i - 1] - inputArray[i] + 1;
+      inputArray[i] += localDiff;
+      minDiff += localDiff;
+    }
+  }
+
+  return minDiff;
+}

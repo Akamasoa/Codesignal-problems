@@ -41,3 +41,12 @@ function helloWorld(name) {
 }
 */
 
+function avoidObstacles(inputArray) {
+let i = 1;
+    while (true) {
+        if (inputArray.every(x => x % i !== 0)) {
+            return i;
+        }
+        i++;
+    }
+}

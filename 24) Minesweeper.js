@@ -43,4 +43,26 @@ function helloWorld(name) {
 }
 */
 
-
+function minesweeper(matrix) {
+   let result = [];
+    for (let i = 0; i < matrix.length; i++) {
+        result.push([]);
+        for (let j = 0; j < matrix[i].length; j++) {
+            result[i].push(0);
+        }
+    }
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] === true) {
+                for (let k = Math.max(0, i - 1); k <= Math.min(i + 1, matrix.length - 1); k++) {
+                    for (let l = Math.max(0, j - 1); l <= Math.min(j + 1, matrix[k].length - 1); l++) {
+                        if (k !== i || l !== j) {
+                            result[k][l]++;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return result;
+}

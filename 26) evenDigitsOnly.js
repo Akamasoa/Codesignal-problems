@@ -30,3 +30,12 @@ function helloWorld(name) {
 }
 */
 
+function evenDigitsOnly(n) {
+let str = n.toString();
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] % 2 !== 0) {
+            return false;
+        }
+    }
+    return true;
+}

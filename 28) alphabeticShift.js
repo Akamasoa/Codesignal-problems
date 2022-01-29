@@ -29,3 +29,17 @@ function helloWorld(name) {
     return "Hello, " + name;
 }
 */
+
+function solution(inputString) {
+var outputString = '';
+    for(var i = 0; i < inputString.length; i++){
+        if(inputString[i] === 'z'){
+            outputString += 'a';
+        }else if(inputString[i] === 'Z'){
+            outputString += 'A';
+        }else{
+            outputString += String.fromCharCode(inputString.charCodeAt(i) + 1);
+        }
+    }
+    return outputString;
+}

@@ -46,15 +46,7 @@ function helloWorld(name) {
 */
 
 function solution(cell1, cell2) {
-  var row1 = cell1[0].charCodeAt(0) - 65;
-    var col1 = cell1[1] - 1;
-    var row2 = cell2[0].charCodeAt(0) - 65;
-    var col2 = cell2[1] - 1;
-    var rowDiff = Math.abs(row1 - row2);
-    var colDiff = Math.abs(col1 - col2);
-    if(rowDiff === colDiff){
-        return true;
-    }else{
-        return false;
-    } 
+  var sum_1 = cell1.charCodeAt(0) - 64+parseInt(cell1.charAt(1));
+    var sum_2 = cell2.charCodeAt(0) - 64+parseInt(cell2.charAt(1));
+    return (sum_1 % 2 === 0 && sum_2 % 2 === 0) || (sum_1 % 2 === 1 && sum_2 % 2 === 1);
 }

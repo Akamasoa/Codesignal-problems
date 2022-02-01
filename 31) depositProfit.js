@@ -53,3 +53,12 @@ function helloWorld(name) {
 }
 */
 
+function solution(deposit, rate, threshold) {
+let balance = deposit;
+    let years = 0;
+    while (balance < threshold) {
+        balance = balance + (balance * rate / 100);
+        years++;
+    }
+    return years;
+}

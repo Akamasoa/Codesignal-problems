@@ -33,6 +33,16 @@ function helloWorld(name) {
     console.log("This prints to the console when you Run Tests");
     return "Hello, " + name;
 }
-
 */
 
+function solution(inputArray, k) {
+    let newArray = [];
+    let i = 0;
+    while (i < inputArray.length) {
+        if (i % k < k - 1) {
+            newArray.push(inputArray[i]);
+        }
+        i++;
+    }
+    return newArray;
+}

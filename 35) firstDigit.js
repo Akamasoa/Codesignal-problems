@@ -32,3 +32,14 @@ function helloWorld(name) {
 }
 */
 
+function solution(inputString) {
+  let arr = inputString.split("");
+    let result = "";
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] >= "0" && arr[i] <= "9"){
+            result = arr[i];
+            break;
+        }
+    }
+    return result;
+}

@@ -32,3 +32,6 @@ function helloWorld(name) {
 
 */
 
+function solution(s) {
+    return s.split('').filter((el,i,self)=>i===self.indexOf(el)).length;
+}

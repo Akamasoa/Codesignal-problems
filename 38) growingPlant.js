@@ -60,3 +60,16 @@ function helloWorld(name) {
 }
 */
 
+function solution(upSpeed, downSpeed, desiredHeight) {
+let day = 0;
+    let height = 0;
+    while (height < desiredHeight) {
+        day++;
+        height += upSpeed;
+        if (height >= desiredHeight) {
+            break;
+        }
+        height -= downSpeed;
+    }
+    return day;
+}

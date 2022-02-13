@@ -27,3 +27,10 @@ function helloWorld(name) {
 }
 */
 
+function solution(inputString) {
+ let i = 0;
+    while (inputString[i] >= '0' && inputString[i] <= '9') {
+        i++;
+    }
+    return inputString.substring(0, i);
+}

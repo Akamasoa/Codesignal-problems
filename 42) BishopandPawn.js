@@ -52,3 +52,10 @@ function helloWorld(name) {
 }
 */
 
+function solution(bishop, pawn) {
+var bishopX = bishop.charCodeAt(0) - 97;
+    var bishopY = parseInt(bishop[1]);
+    var pawnX = pawn.charCodeAt(0) - 97;
+    var pawnY = parseInt(pawn[1]);
+    return Math.abs(bishopX - pawnX) == Math.abs(bishopY - pawnY);
+}

@@ -32,3 +32,7 @@ function helloWorld(name) {
 }
 */
 
+function solution(address) {
+ let domain = address.substring(address.lastIndexOf('@') + 1);
+    return domain;
+}

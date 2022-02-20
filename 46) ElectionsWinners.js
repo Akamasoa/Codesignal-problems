@@ -48,3 +48,14 @@ function helloWorld(name) {
 
 */
 
+function solution(votes, k) {
+let max = Math.max(...votes);
+    let count = 0;
+    if (k==0 && votes.filter((a)=>a==max).length>1)
+        return 0;
+    for(let i = 0; i < votes.length; i++) {
+        if(votes[i] + k > max || k === 0 && votes[i] == max)
+            count++;
+    }
+    return count;
+}

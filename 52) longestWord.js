@@ -29,3 +29,35 @@ function helloWorld(name) {
 }
 */
 
+function solution(text) {
+ let longestWord = '';
+    let currentWord = '';
+    for (var i = 0; i < text.length; i++) {
+        if (text[i].match(/[a-z]/i)) {
+            currentWord += text[i];
+        } else {
+            if (currentWord.length > longestWord.length) {
+                longestWord = currentWord;
+            }
+            currentWord = '';
+        }
+    }
+    if (currentWord.length > longestWord.length) {
+        longestWord = currentWord;
+    }
+    return longestWord;
+}
+
+
+//Short solution from a friend:
+
+// function longestWord(text) {
+//     var words = text.match(/\w+/g);
+    
+//     var ml = Math.max(...words.map(el=>el.length))
+    
+//     for(var i=0;i< words.length; i++){
+//         if(words[i].length == ml)
+//             return words[i]
+//     }
+// }

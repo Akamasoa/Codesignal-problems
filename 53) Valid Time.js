@@ -31,3 +31,11 @@ function helloWorld(name) {
 }
 */
 
+function solution(time) {
+let hour = parseInt(time.slice(0, 2));
+    let min = parseInt(time.slice(3, 5));
+    if (hour < 0 || hour > 23 || min < 0 || min > 59) {
+        return false;
+    }
+    return true;
+}

@@ -36,3 +36,16 @@ function helloWorld(name) {
 }
 */
 
+function solution(code) {
+    let decoded = '';
+    for(let i = 0; i < code.length; i += 8) {
+        decoded += String.fromCharCode(parseInt(code.substring(i, i + 8), 2));
+    }
+    return decoded;
+}
+
+//Friend solution:
+
+// function solution(code) {
+//   return code.match(/[01]{8}/g).map((b)=>String.fromCharCode(Number('0b'+b))).join('');
+// }

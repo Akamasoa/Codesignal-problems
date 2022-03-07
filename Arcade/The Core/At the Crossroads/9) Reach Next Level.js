@@ -42,3 +42,13 @@ function helloWorld(name) {
 }
 */
 
+function solution(experience, threshold, reward) {
+	return threshold <= experience + reward;
+}
+
+// if (experience + reward >= threshold){
+//     return true;
+// }else{
+//     return false;
+// }
+// }

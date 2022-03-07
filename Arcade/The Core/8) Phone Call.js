@@ -61,7 +61,7 @@ let  time = 0;
 		time += 1;
 	}
 	if (s >= min2_10) {
-		var m = Math.min(9, s / min2_10);
+		let m = Math.min(9, s / min2_10);
 		time += m;
 		s -= min2_10 * m;
 	}

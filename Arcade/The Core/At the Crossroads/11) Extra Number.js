@@ -39,3 +39,17 @@ function helloWorld(name) {
 }
 */
 
+function solution(a, b, c) {
+if (a == b){
+    return c;
+}else if (b == c){
+    return a;
+}else if (a == c){
+    return b;
+}
+}
+
+//Short solution:
+//function solution(a, b, c) {
+//	return a == b ? c : a == c ? b : a;
+//}

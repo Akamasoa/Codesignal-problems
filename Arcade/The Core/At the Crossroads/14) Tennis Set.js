@@ -52,3 +52,8 @@ function helloWorld(name) {
 }
 */
 
+function solution(score1, score2) {
+  let max = Math.max(score1, score2);
+  let min = Math.min(score1, score2);
+   return max === 6 && min < 5 || max === 7 && min > 4 && min < 7;
+}

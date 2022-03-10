@@ -37,3 +37,8 @@ function helloWorld(name) {
 }
 */
 
+function solution(lastNumberOfDays) {
+if (lastNumberOfDays === 30 || lastNumberOfDays === 28)
+		return [31];
+	return [28, 30, 31];
+}

@@ -34,3 +34,10 @@ function helloWorld(name) {
 }
 */
 
+function solution(a, b) {
+let ret = 0;
+	for (let i = a; i <= b; i++) {
+		ret += [0, 1, 2, 3].reduce((acc, d) => acc + ((i & 1 << d) >> d), 0);
+	}
+	return ret;
+}

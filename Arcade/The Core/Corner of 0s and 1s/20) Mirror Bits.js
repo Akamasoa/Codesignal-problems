@@ -32,3 +32,12 @@ function helloWorld(name) {
 }
 */
 
+function solution(a) {
+let ret = 0;
+  let m = Math.floor(Math.log2(a));
+  let i = m + 1;
+  while (i--) {
+    ret = ret | (((a & (1 << i)) >> i) << (m - i));
+  }
+  return ret;
+}

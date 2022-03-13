@@ -46,7 +46,7 @@ function helloWorld(name) {
     console.log("This prints to the console when you Run Tests");
     return "Hello, " + name;
 }
-+/
+*/
 
 function solution(n, m) {
   return (

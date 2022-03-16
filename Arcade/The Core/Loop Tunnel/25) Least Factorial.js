@@ -35,3 +35,11 @@ function helloWorld(name) {
 }
 */
 
+function solution(n) {
+ let f = 1;
+ let i = 1;
+ while(f < n){
+     f *= i++; 
+ }
+ return f;
+}

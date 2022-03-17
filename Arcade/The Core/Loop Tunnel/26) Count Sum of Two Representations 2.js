@@ -47,6 +47,19 @@ function helloWorld(name) {
 */
 
 function solution(n, l, r) {
+  let count = 0;
+    for (let i = l; i <= r; i++) {
+        for (let j = i; j <= r; j++) {
+            if (n === i + j) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+/*
+function solution(n, l, r) {
   if (2 * r < n || 2 * l > n) {
       return 0;
   }
@@ -55,3 +68,4 @@ function solution(n, l, r) {
   let mid = Math.floor((max + min) / 2);
   return mid - min + 1;
 }
+*/

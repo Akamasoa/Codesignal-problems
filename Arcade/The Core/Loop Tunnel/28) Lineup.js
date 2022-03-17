@@ -39,3 +39,25 @@ function helloWorld(name) {
 }
 */
 
+function solution(commands) {
+ let c = {
+    L: 1,
+    R: 3,
+    A: 2
+  };
+  let d = {
+    R: 1,
+    L: 3,
+    A: 2
+  };
+  let e = 0;
+  let f = 0;
+  let ret = 0;
+  for (let i = 0; i < commands.length; i++) {
+    var cmd = commands[i];
+    e = (e + c[cmd]) % 4;
+    f = (f + d[cmd]) % 4;
+    if (e === f) ret++;
+  }
+  return ret;
+}

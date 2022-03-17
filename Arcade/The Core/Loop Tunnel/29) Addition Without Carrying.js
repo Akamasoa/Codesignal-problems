@@ -52,3 +52,18 @@ function helloWorld(name) {
 }
 */
 
+function solution(param1, param2) {
+   param1 = String(param1);
+  param2 = String(param2);
+  let a = param1.length > param2.length ? param1 : param2;
+  let b = param1.length > param2.length ? param2 : param1;
+
+  b = ("00000" + b)
+    .slice(-a.length)
+    .split("")
+    .map(Number);
+  a = a.split("").map(Number);
+
+  let c = a.map((el, i) => (el + b[i]) % 10);
+  return Number(c.join(""));
+}

@@ -41,3 +41,17 @@ function helloWorld(name) {
 }
 */
 
+function solution(n) {
+let l = Math.floor(Math.log10(n));
+  let m = 10;
+  for (i = 0; i < l; i++) {
+    let r = (10 * (n % m)) / m;
+    if (r < 5) {
+      n -= (m * r) / 10;
+    } else {
+      n += (m * (10 - r)) / 10;
+    }
+    m *= 10;
+  }
+  return n;
+}

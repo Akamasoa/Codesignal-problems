@@ -49,3 +49,13 @@ function helloWorld(name) {
 }
 */
 
+function solution(candlesNumber, makeNew) {
+let burn = 0;
+  while (candlesNumber >= makeNew) {
+    let v = Math.floor(candlesNumber / makeNew);
+    burn += v * makeNew;
+    candlesNumber = v + (candlesNumber % makeNew);
+  }
+  burn += candlesNumber;
+  return burn;
+}

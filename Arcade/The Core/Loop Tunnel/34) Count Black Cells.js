@@ -53,3 +53,26 @@ function helloWorld(name) {
 }
 */
 
+function solution(n, m) {
+let s;
+  if (n > m) {
+    s = n;
+    n = m;
+    m = s;
+  }
+  s = 0;
+  let r = 0;
+  let t = 0;
+  for (let i = 0; i < n / gcd(m, n); i++) {
+    t = m / n + r;
+    s += Math.ceil(t);
+    r = (t - 0.000001) % 1;
+  }
+  function gcd(a, b) {
+    if (!b) {
+      return a;
+    }
+    return gcd(b, a % b);
+  }
+  return gcd(m, n) * s + (gcd(m, n) - 1) * 2;
+}

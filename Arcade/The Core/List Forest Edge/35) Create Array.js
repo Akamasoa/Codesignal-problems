@@ -34,3 +34,10 @@ return "Hello, " + name;
 }
 */
 
+function solution(size) {
+    let arr = [];
+    for(let i = 0; i < size; i++) {
+        arr.push(1);
+    }
+    return arr;
+}

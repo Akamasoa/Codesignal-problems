@@ -38,3 +38,6 @@ function helloWorld(name) {
 }
 */
 
+function solution(inputArray, elemToReplace, substitutionElem) {
+  return inputArray.map(e => (e === elemToReplace ? substitutionElem : e));
+}

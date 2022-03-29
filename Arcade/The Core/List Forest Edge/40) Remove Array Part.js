@@ -46,3 +46,16 @@ function removeArrayPart(inputArray, l, r) {
   inputArray.splice(l, r - l + 1);
   return inputArray;
 }
+
+//Long solution:
+/*
+function solution(inputArray, l, r) {
+    var newArray = [];
+    for(var i = 0; i < inputArray.length; i++){
+        if(i < l || i > r){
+            newArray.push(inputArray[i]);
+        }
+    }
+    return newArray;
+}
+*/

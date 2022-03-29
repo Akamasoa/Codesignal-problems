@@ -43,3 +43,28 @@ function helloWorld(name) {
 }
 */
 
+function solution(arr) {
+   let middleNumber = 0;
+    let middle1 = 0;
+    let middle2 = 0
+    // If odd
+    if(arr.length % 2 !== 0) {
+        // If odd length divide by 2 and truncate the result to get middle element
+        middleNumber = arr[Math.trunc(arr.length / 2)];
+    }
+    // If even
+    else {
+        // If even length, divide by two to get first of the two middle numbers, then divide length by 2 and add 1 to get second middle number
+        middle1 = arr.length / 2;
+        middle2 = arr.length / 2 - 1;
+        // Sum the two middle numbers
+        middleNumber = arr[middle1] + arr[middle2];
+    }
+    // If first, middle, and last value are the same return true
+    if(middleNumber === arr[0] && middleNumber === arr[arr.length - 1]) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}

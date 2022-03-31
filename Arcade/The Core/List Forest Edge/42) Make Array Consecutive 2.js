@@ -34,3 +34,11 @@ function helloWorld(name) {
 }
 */
 
+function solution(statues) {
+let s = 0;
+  statues.sort((a, b) => a - b);
+  for (let i = 1; i < statues.length; i++) {
+    s += statues[i] - statues[i - 1] - 1;
+  }
+  return s;
+}

@@ -43,3 +43,21 @@ function helloWorld(name) {
 }
 */
 
+function solution(l, r) {
+function s(x) {
+    return String(x).split('').map(Number).reduce((a, b) => a + b);
+  }
+  let ret = [];
+  for (let i = l; i <= r; i++) {
+    for (let j = i + 1; j <= Math.min(r, i + s(i)); j++) {
+      if (i === j)
+        continue;
+      if (i >= j - s(j) && i <= j + s(j)) {
+        ret.push([i, j]);
+      }
+    }
+  }
+  return ret.filter((el, id, arr) => id === arr.findIndex(function (fl) {
+    return el[0] === fl[0] && el[1] === fl[1];
+  })).length;
+}

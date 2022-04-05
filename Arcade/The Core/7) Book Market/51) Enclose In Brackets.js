@@ -32,3 +32,6 @@ return "Hello, " + name;
 }
 */
 
+function solution(inputString) {
+  return `(${inputString})`;
+}

@@ -47,3 +47,9 @@ function isTandemRepeat(inputString) {
 }
 */
 
+function solution(inputString) {
+let concat = inputString.length;
+  return (
+    concat % 2 === 0 && inputString.substr(0, concat / 2) === inputString.substr(concat / 2)
+  );
+}

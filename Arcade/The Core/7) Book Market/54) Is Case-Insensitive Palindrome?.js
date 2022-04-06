@@ -36,3 +36,13 @@ function helloWorld(name) {
 }
 */
 
+function solution(inputString) {
+ return (
+     inputString.toLowerCase() ===
+     inputString
+       .toLowerCase()
+       .split("")
+       .reverse()
+       .join("")
+   );
+}

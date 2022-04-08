@@ -38,3 +38,6 @@ return "Hello, " + name;
 }
 */
 
+function solution(startTag) {
+  return "</" + /<([a-z\-A-Z]+)/.exec(startTag)[1] + ">";
+}

@@ -53,3 +53,17 @@ return "Hello, " + name;
 }
 */
 
+function differentSquares(matrix) {
+  let acc = {};
+  for (let i = 0; i < matrix.length - 1; i++) {
+    for (let j = 0; j < matrix[i].length - 1; j++) {
+      var square = matrix.slice(i, i + 2).map(r => r.slice(j, j + 2));
+      acc[square[0].join("") + square[1].join("")] = 1;
+    }
+  }
+  let ret = 0;
+  for (let f in acc) {
+    ret += acc[f];
+  }
+  return ret;
+}

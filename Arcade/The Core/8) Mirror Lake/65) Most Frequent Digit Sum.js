@@ -45,3 +45,24 @@ return "Hello, " + name;
 }
 */
 
+function mostFrequentDigitSum(n) {
+  let count = [1];
+  let sx;
+  while (n) {
+    sx = String(n)
+      .split("")
+      .map(Number)
+      .reduce((a, b) => a + b, 0);
+    count[sx] = -~count[sx];
+    n -= sx;
+  }
+  let max = 1;
+  let maxn = 0;
+  for (let i in count) {
+    if (count[i] >= max) {
+      max = count[i];
+      maxn = i;
+    }
+  }
+  return Number(maxn);
+}

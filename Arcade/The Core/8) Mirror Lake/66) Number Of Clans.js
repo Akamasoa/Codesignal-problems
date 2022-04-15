@@ -44,3 +44,17 @@ return "Hello, " + name;
 }
 */
 
+function numberOfClans(divisors, k) {
+  let clans = Array(1024).fill(0);
+  let c = 0;
+  for (let i = 1; i <= k; i++) {
+    c = 0;
+    for (let j = 0; j < divisors.length; j++) {
+      if (i % divisors[j] === 0) {
+        c = c | (1 << j);
+      }
+    }
+    clans[c] = 1;
+  }
+  return clans.reduce((a, b) => a + b);
+}

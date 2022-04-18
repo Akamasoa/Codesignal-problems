@@ -41,3 +41,10 @@ return "Hello, " + name;
 }
 */
 
+function houseOfCats(legs) {
+  let catman = [];
+  for (let i = Math.floor((legs % 4) / 2); i <= Math.floor(legs / 2); i += 2) {
+    catman.push(i);
+  }
+  return catman;
+}

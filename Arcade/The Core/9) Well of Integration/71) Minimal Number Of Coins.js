@@ -47,3 +47,15 @@ return "Hello, " + name;
 }
 */
 
+function minimalNumberOfCoins(coins, price) {
+  let count = 0;
+  coins.reverse();
+  for (let i = 0; i < coins.length; i++) {
+    if (price >= coins[i]) {
+      count += Math.floor(price / coins[i])
+      price = price % coins[i];
+    }
+  }
+  coins.reverse()
+  return count;
+}

@@ -46,3 +46,12 @@ return "Hello, " + name;
 }
 */
 
+function alphabetSubsequence(s) {
+  let isSubsequence = true;
+  for (let i = 1; i < s.length; i++) {
+    if (s.charCodeAt(i) <= s.charCodeAt(i - 1))
+      isSubsequence = false;
+  }
+
+  return isSubsequence;
+}

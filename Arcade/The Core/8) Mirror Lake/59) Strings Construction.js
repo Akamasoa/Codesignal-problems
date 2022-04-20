@@ -47,23 +47,31 @@ return "Hello, " + name;
 */
 
 function stringsConstruction(a, b) {
-  let count = 0;
-  let finding = true;
-  let pos;
-  b = b.split("");
-  while (finding) {
-    for (let i = 0; i < a.length; i++) {
-      pos = b.indexOf(a[i]);
-      if (pos >= 0) {
-        b.splice(pos, 1);
-      } else {
-        finding = false;
-        break;
-      }
+  let stillValidLettersLeft = true;
+    let count = 0;
+    let seen = {};
+    a = a.split("").sort();
+
+    for (let char of b) {
+        if (!seen.hasOwnProperty(char)) {
+            seen[char] = 0;
+        }
+        seen[char] += 1;
     }
-    if (finding) {
-      count++;
+
+    while (stillValidLettersLeft) {
+        let curr = "";
+
+        for (let i = 0; i < a.length; i++) {
+            if (seen.hasOwnProperty(a[i]) && seen[a[i]] > 0) {
+                curr += a[i];
+                seen[a[i]] -= 1;
+            } else {
+                stillValidLettersLeft = false;
+                break;
+            }
+        }
+        if (curr.split("").sort().join("") === a.join("")) count++;
     }
-  }
-  return count;
+    return count;
 }

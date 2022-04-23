@@ -54,3 +54,22 @@ return "Hello, " + name;
 }
 */
 
+function areSimilar(a, b) {
+  let are = true;
+  let av = null;
+  let bv = null;
+  let swap = false;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      if (av === null || bv === null) {
+        av = a[i]; bv = b[i];
+      } else {
+        if (swap || av !== b[i] || bv !== a[i]) {
+          are = false;
+        }
+        swap = true;
+      }
+    }
+  }
+  return are;
+}

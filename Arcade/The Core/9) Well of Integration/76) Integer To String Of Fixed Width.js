@@ -43,3 +43,4 @@ return "Hello, " + name;
 }
 */
 
+  return ("0".repeat(width) + number).substr(-width);

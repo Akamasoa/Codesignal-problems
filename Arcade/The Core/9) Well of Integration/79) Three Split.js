@@ -42,3 +42,21 @@ return "Hello, " + name;
 }
 */
 
+function threeSplit(a) {
+  let totalSum = a.reduce((b, c) => b + c);
+  let firstSum = 0;
+  let secondSum = 0;
+  let thirdSum = 0;
+  let ways = 0;
+  for (let i = 0; i < a.length - 2; i++) {
+    firstSum += a[i];
+    secondSum = 0;
+    for (let j = i + 1; j < a.length - 1; j++) {
+      secondSum += a[j];
+      if (firstSum === secondSum && secondSum === totalSum - firstSum - secondSum) {
+        ways++;
+      }
+    }
+  }
+  return ways;
+}

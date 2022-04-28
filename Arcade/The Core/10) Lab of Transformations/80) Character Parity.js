@@ -35,3 +35,11 @@ return "Hello, " + name;
 }
 */
 
+function characterParity(symbol) {
+  let isDigit = /^\d{1}$/.test(symbol);
+  let isEven;
+  if (isDigit) {
+    isEven = Number(symbol) % 2 === 0;
+  }
+  return isDigit ? isEven ? "even" : "odd" : "not a digit";
+}

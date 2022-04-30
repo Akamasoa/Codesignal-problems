@@ -38,3 +38,10 @@ function helloWorld(name) {
 }
 */
 
+unction houseOfCats(legs) {
+  let ret = [];
+  for (let i = Math.floor((legs % 4) / 2); i <= Math.floor(legs / 2); i += 2) {
+    ret.push(i);
+  }
+  return ret;
+}

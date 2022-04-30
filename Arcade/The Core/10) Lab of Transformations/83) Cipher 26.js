@@ -45,3 +45,14 @@ return "Hello, " + name;
 }
 */
 
+function cipher26(message) {
+  let original = [];
+  let sum = 0;
+  let nextChar;
+  for (let i = 0; i < message.length; i++) {
+    nextChar = (message[i].charCodeAt(0) - 'a'.charCodeAt(0) + 26 - sum) % 26;
+    original.push(nextChar);
+    sum = (sum + nextChar) % 26;
+  }
+  return original.map(c => String.fromCharCode(c + 'a'.charCodeAt(0))).join('');
+}

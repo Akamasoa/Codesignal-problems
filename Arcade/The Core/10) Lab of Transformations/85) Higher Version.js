@@ -43,3 +43,15 @@ return "Hello, " + name;
 }
 */
 
+function higherVersion(ver1, ver2) {
+  let ver1Arr = ver1.split('.').map(Number);
+  let ver2Arr = ver2.split('.').map(Number);
+  for (let i = 0; i < ver1Arr.length; i++) {
+    if (ver1Arr[i] > ver2Arr[i]) {
+      return true;
+    } else if (ver1Arr[i] < ver2Arr[i]) {
+      return false;
+    }
+  }
+  return false;
+}

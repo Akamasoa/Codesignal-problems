@@ -50,5 +50,5 @@ function addBorder(picture) {
     .concat(
       picture.map(r => '*' + r + '*'),
       [Array(picture[0].length + 2).fill('*').join('')]
-    )
+    );
 }

@@ -42,3 +42,16 @@ return "Hello, " + name;
 }
 */
 
+function decipher(cipher) {
+  let arr = cipher.split('').map(Number);
+  let curr = 0;
+  let ret = [];
+  for (let i = 0; i < cipher.length; i++) {
+    curr = curr * 10 + arr[i];
+    if (curr >= 97) {
+      ret.push(String.fromCharCode(curr));
+      curr = 0;
+    }
+  }
+  return ret.join('');
+}

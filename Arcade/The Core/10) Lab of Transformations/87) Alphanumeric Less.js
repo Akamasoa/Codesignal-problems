@@ -67,3 +67,42 @@ return "Hello, " + name;
 }
 */
 
+function alphanumericLess(s1, s2) {
+  let regex = /[a-zA-Z]|\d+/g;
+  let tokens1 = s1.match(regex);
+  let tokens2 = s2.match(regex);
+  let diffLengths = tokens1.length !== tokens2.length;
+
+  for (let i = 0; i < Math.max(tokens1.length, tokens2.length); i++) {
+    if (diffLengths) {
+      if (i === tokens1.length) {
+        return true;
+      }
+      if (i === tokens2.length) {
+        return false;
+      }
+    }
+    if (/\d+/.test(tokens1[i]) && /\d+/.test(tokens2[i])) {
+      let n1 = /^0*(\d+)$/.exec(tokens1[i])[1];
+      let n2 = /^0*(\d+)$/.exec(tokens2[i])[1];
+      if (n1 !== n2) {
+        return n1 < n2;
+      }
+    } else if (tokens1[i] !== tokens2[i]) {
+      return tokens1[i] < tokens2[i];
+    }
+  }
+
+  for (let i = 0; i < tokens1.length; i++) {
+    if (/\d+/.test(tokens1[i]) && /\d+/.test(tokens2[i])) {
+      let leadingZeros1 = /^[0]+/.exec(tokens1[i]) && /^[0]+/.exec(tokens1[i])[0].length || 0;
+      let leadingZeros2 = /^[0]+/.exec(tokens2[i]) && /^[0]+/.exec(tokens2[i])[0].length || 0;
+
+      if (leadingZeros1 !== leadingZeros2) {
+        return leadingZeros1 > leadingZeros2;
+      }
+    }
+  }
+
+  return false;
+}

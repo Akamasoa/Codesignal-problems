@@ -43,4 +43,6 @@ return "Hello, " + name;
 }
 */
 
-  return ("0".repeat(width) + number).substr(-width);
+function solution(number, width) {
+ return ("0".repeat(width) + number).substr(-width);
+}

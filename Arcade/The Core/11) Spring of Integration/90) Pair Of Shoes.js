@@ -53,3 +53,20 @@ return "Hello, " + name;
 }
 */
 
+function pairOfShoes(shoes) {
+  let pos;
+  let shoe;
+  while (shoes.length) {
+    shoe = shoes.pop();
+    if (
+      (pos = shoes.findIndex(
+        ([type, size]) => size === shoe[1] && type === 1 - shoe[0]
+      )) >= 0
+    ) {
+      shoes.splice(pos, 1);
+    } else {
+      return false;
+    }
+  }
+  return true;
+}

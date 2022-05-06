@@ -36,3 +36,15 @@ return "Hello, " + name;
 }
 */
 
+function arrayPreviousLess(items) {
+  let extendedItems = [-1].concat(items);
+  let previousLess = [];
+  for (let i = 1; i < extendedItems.length; i++) {
+    let j = i - 1;
+    while (extendedItems[j] >= extendedItems[i]) {
+      j--;
+    }
+    previousLess.push(extendedItems[j]);
+  }
+  return previousLess;
+}

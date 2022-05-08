@@ -48,3 +48,23 @@ return "Hello, " + name;
 }
 */
 
+function stringsCrossover(inputArray, result) {
+  let pairs = 0;
+  for (let i = 0; i < inputArray.length - 1; i++) {
+    for (let j = i + 1; j < inputArray.length; j++) {
+      if (possibleCrossover(inputArray[i], inputArray[j], result)) {
+        pairs++;
+      }
+    }
+  }
+  return pairs;
+}
+
+function possibleCrossover(A, B, result) {
+  for (let i = 0; i < A.length; i++) {
+    if (A[i] !== result[i] && B[i] !== result[i]) {
+      return false;
+    }
+  }
+  return true;
+}

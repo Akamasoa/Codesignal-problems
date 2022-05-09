@@ -68,41 +68,80 @@ return "Hello, " + name;
 */
 
 function alphanumericLess(s1, s2) {
-  let regex = /[a-zA-Z]|\d+/g;
-  let tokens1 = s1.match(regex);
-  let tokens2 = s2.match(regex);
-  let diffLengths = tokens1.length !== tokens2.length;
+  if (s1 == s2) return false;
 
-  for (let i = 0; i < Math.max(tokens1.length, tokens2.length); i++) {
-    if (diffLengths) {
-      if (i === tokens1.length) {
-        return true;
-      }
-      if (i === tokens2.length) {
-        return false;
-      }
+    let arr1 = splitTokens(s1);
+    let arr2 = splitTokens(s2);
+
+    let isMoreLeadingZeros = false;
+    let maxLen = Math.max(arr1.length, arr2.length);
+
+    for (let i = 0; i < maxLen; i++) {
+        if (arr1[i] == undefined) return true;
+        if (arr2[i] == undefined) return false;
+
+        if (!isNaN(arr1[i])) {
+            if (isNaN(arr2[i])) return true;
+            else {
+                if (compare(arr1[i], arr2[i]) == 1) {
+                    return true;
+                } else if (compare(arr1[i], arr2[i]) == -1) return false;
+                else {
+
+                    if (arr1[i].length >= arr2[i].length) isMoreLeadingZeros = true;
+                    continue;
+                }
+            }
+        } else {
+            if (!isNaN(arr2[i])) return false;
+            else {
+                if (arr1[i] == arr2[i]) continue;
+                if (arr1[i] < arr2[i]) return true;
+                else if (arr1[i] > arr2[i]) return false;
+            }
+        }
     }
-    if (/\d+/.test(tokens1[i]) && /\d+/.test(tokens2[i])) {
-      let n1 = /^0*(\d+)$/.exec(tokens1[i])[1];
-      let n2 = /^0*(\d+)$/.exec(tokens2[i])[1];
-      if (n1 !== n2) {
-        return n1 < n2;
-      }
-    } else if (tokens1[i] !== tokens2[i]) {
-      return tokens1[i] < tokens2[i];
+    return isMoreLeadingZeros ? true : false;
+}
+
+function splitTokens(str) {
+    let ans = [],
+        tmp = '';
+
+    for (let i = 0; i < str.length; i++) {
+        if (isNaN(str[i])) {
+
+            if (!isNaN(tmp)) {
+                tmp != '' && ans.push(tmp);
+                ans.push(str[i]);
+                tmp = '';
+            }
+        } else {
+            if (!isNaN(tmp)) {
+                tmp += str[i];
+            } else {
+                tmp != '' && ans.push(tmp);
+                tmp = str[i];
+            }
+        }
     }
-  }
+    if (tmp != '') ans.push(tmp);
+    return ans;
+}
 
-  for (let i = 0; i < tokens1.length; i++) {
-    if (/\d+/.test(tokens1[i]) && /\d+/.test(tokens2[i])) {
-      let leadingZeros1 = /^[0]+/.exec(tokens1[i]) && /^[0]+/.exec(tokens1[i])[0].length || 0;
-      let leadingZeros2 = /^[0]+/.exec(tokens2[i]) && /^[0]+/.exec(tokens2[i])[0].length || 0;
+function compare(s1, s2) {
+    num1 = removeLeadingZeros(s1);
+    num2 = removeLeadingZeros(s2);
 
-      if (leadingZeros1 !== leadingZeros2) {
-        return leadingZeros1 > leadingZeros2;
-      }
+    if (num1.length < num2.length) return 1;
+    if (num1.length > num2.length) return -1;
+
+    for (let i = 0; i < num1.length; i++) {
+        if (num1[i] < num2[i]) return 1;
+        if (num1[i] > num2[i]) return -1;
     }
-  }
-
-  return false;
+    return 0;
+}
+function removeLeadingZeros(s) {
+    return s.replace(/^0+/, '');
 }

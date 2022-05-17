@@ -42,3 +42,12 @@ function helloWorld(name) {
 }
 */
 
+function solution(matrix) {
+ let reversed = matrix.map((row) => row.slice());
+ let n = matrix.length;
+  for (let i = 0; i < n; i++) {
+    reversed[i][i] = matrix[n - 1 - i][n - 1 - i];
+    reversed[n - i - 1][i] = matrix[i][n - i - 1];
+  }
+  return reversed;
+}

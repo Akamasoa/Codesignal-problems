@@ -91,3 +91,20 @@ return "Hello, " + name;
 }
 */
 
+function volleyballPositions(formation, k) {
+  let rotations = [
+    [0, 1],
+    [1, 0],
+    [3, 0],
+    [2, 1],
+    [3, 2],
+    [1, 2],
+  ];
+  let initial = formation.map((row) => row.slice());
+  k = 6 - (k % 6);
+  for (let i = 0; i < 6; i++) {
+    initial[rotations[i][0]][rotations[i][1]] =
+      formation[rotations[(i + k) % 6][0]][rotations[(i + k) % 6][1]];
+  }
+  return initial;
+}

@@ -43,3 +43,35 @@ function helloWorld(name) {
 }
 */
 
+function solution(matrix) {
+let adjacents = ([i, j]) => [
+    [i - 1, j - 1],
+    [i - 1, j],
+    [i - 1, j + 1],
+    [i, j - 1],
+    [i, j + 1],
+    [i + 1, j - 1],
+    [i + 1, j],
+    [i + 1, j + 1],
+  ];
+  let hintsMatrix = matrix.map((r) => r.map((_) => 0));
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j]) {
+        let myAd = adjacents([i, j]);
+        for (let k = 0; k < 8; k++) {
+          if (
+            myAd[k][0] >= 0 &&
+            myAd[k][1] >= 0 &&
+            myAd[k][0] < matrix.length &&
+            myAd[k][1] < matrix[i].length
+          ) {
+            hintsMatrix[myAd[k][0]][myAd[k][1]]++;
+          }
+        }
+      }
+    }
+  }
+  return hintsMatrix;
+}

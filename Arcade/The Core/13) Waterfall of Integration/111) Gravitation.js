@@ -49,3 +49,25 @@ return "Hello, " + name;
 }
 */
 
+function solution(rows) {
+let copyRows = rows.slice().reverse();
+  let times = copyRows[0].split("").map(function (_, c) {
+    let tmp = 0;
+    let secs = 0;
+    for (let i = 0; i < copyRows.length; i++) {
+      if (copyRows[i][c] === ".") {
+        tmp++;
+      } else {
+        secs += tmp;
+        tmp = 0;
+      }
+    }
+    return {
+      col: c,
+      secs: secs,
+    };
+  });
+  return times
+    .filter((c) => c.secs === Math.min(...times.map((t) => t.secs)))
+    .map((c) => c.col);
+}

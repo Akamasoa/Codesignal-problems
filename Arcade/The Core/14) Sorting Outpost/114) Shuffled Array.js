@@ -44,3 +44,9 @@ return "Hello, " + name;
 }
 */
 
+function shuffledArray(shuffled) {
+  let sum = shuffled.reduce((a, b) => a + b);
+  let i = shuffled.indexOf(sum / 2);
+  shuffled.splice(i, 1);
+  return shuffled.sort((a, b) => a - b);
+}

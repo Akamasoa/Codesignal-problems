@@ -33,5 +33,16 @@ Sorted array a with all the trees untouched.
 function helloWorld(name) {
 console.log("This prints to the console when you Run Tests");
 return "Hello, " + name;
-}*/
+}
+*/
 
+function sortByHeight(a) {
+  let people = a.filter((el) => el != -1);
+  people.sort((a, b) => b - a);
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== -1) {
+      a[i] = people.pop();
+    }
+  }
+  return a;
+}

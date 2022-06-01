@@ -41,3 +41,15 @@ function helloWorld(name) {
 }
 */
 
+function solution(a) {
+  let positioned = a.map((n, i) => ({ n, i }));
+  return positioned
+    .sort(function (b, c) {
+      let bDigits = String(b.n).split("").map(Number);
+      let cDigits = String(c.n).split("").map(Number);
+      let val1 = Math.max(...bDigits) - Math.min(...bDigits);
+      let val2 = Math.max(...cDigits) - Math.min(...cDigits);
+      return val1 !== val2 ? val1 - val2 : c.i - b.i;
+    })
+    .map((el) => el.n);
+}

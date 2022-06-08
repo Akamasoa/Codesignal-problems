@@ -51,3 +51,15 @@ function helloWorld(name) {
 }
 */
 
+function solution(someTime, leavingTime) {
+let date = new Date();
+  date.setTime(2 * Date.parse(someTime) - Date.parse(leavingTime));
+  let year = date.getFullYear();
+  let month = "0" + (date.getMonth() + 1);
+  let day = "0" + date.getDate();
+  let hours = "0" + date.getHours();
+  let minutes = "0" + date.getMinutes();
+  return `${year}-${month.substr(-2)}-${day.substr(-2)} ${hours.substr(
+    -2
+  )}:${minutes.substr(-2)}`;
+}

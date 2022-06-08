@@ -34,3 +34,17 @@ function helloWorld(name) {
 }
 */
 
+function solution(part, total) {
+part = part.split(":").map(Number);
+  total = total.split(":").map(Number);
+  let partSecs = part[0] * 3600 + part[1] * 60 + part[2];
+  let totalSecs = total[0] * 3600 + total[1] * 60 + total[2];
+  let mcd = gcd(partSecs, totalSecs);
+  return [partSecs / mcd, totalSecs / mcd];
+}
+function gcd(a, b) {
+  if (!b) {
+    return a;
+  }
+  return gcd(b, a % b);
+}

@@ -70,3 +70,29 @@ return "Hello, " + name;
 }
 */
 
+function solution(x, weekDay, month, yearNumber) {
+let date = new Date();
+  date.setTime(Date.parse(month + "-01-" + yearNumber));
+  let initMonth = date.getMonth();
+  let daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = 0;
+  while (x > 0) {
+    if (daysOfWeek[date.getDay()] === weekDay) {
+      x--;
+      if (date.getMonth() !== initMonth) {
+        return -1;
+      }
+    }
+    date.setDate(date.getDate() + 1);
+    day++;
+  }
+  return day;
+}

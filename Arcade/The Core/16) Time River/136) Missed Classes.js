@@ -59,3 +59,19 @@ function helloWorld(name) {
 }
 */
 
+function solution(year, daysOfTheWeek, holidays) {
+ let date = new Date();
+  daysOfTheWeek = daysOfTheWeek.map((d) => d % 7);
+  let makeUpDays = 0;
+  for (let i = 0; i < holidays.length; i++) {
+    if (Number(holidays[i].split("-")[0]) >= 9) {
+      date.setTime(Date.parse(holidays[i] + "-" + year));
+    } else {
+      date.setTime(Date.parse(holidays[i] + "-" + (year + 1)));
+    }
+    if (daysOfTheWeek.includes(date.getDay())) {
+      makeUpDays++;
+    }
+  }
+  return makeUpDays;
+}

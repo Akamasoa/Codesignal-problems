@@ -33,3 +33,6 @@ function helloWorld(name) {
 }
 */
 
+function solution(s) {
+  return s.replace(/\b(\w+)\s+(\w+)\b/g, '$2 $1');
+}

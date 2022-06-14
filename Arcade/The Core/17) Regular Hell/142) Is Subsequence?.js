@@ -43,3 +43,11 @@ function helloWorld(name) {
 }
 */
 
+function solution(t, s) {
+  var pattern = "";
+  for (var i = 0; i < s.length; i++) {
+    pattern += '.';
+  }
+  var re = new RegExp(pattern);
+  return re.test(t);
+}

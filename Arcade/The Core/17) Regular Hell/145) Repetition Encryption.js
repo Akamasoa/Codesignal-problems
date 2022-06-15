@@ -40,3 +40,13 @@ function helloWorld(name) {
 }
 */
 
+function solution(letter) {
+  var pattern = /(\w+)\1/g;
+  var matches = letter.match(pattern);
+  if (matches) {
+    return matches.length;
+  }
+  else {
+    return 0;
+  }
+}

@@ -43,3 +43,8 @@ function helloWorld(name) {
 }
 */
 
+function solution(pairOfLines) {
+  var re = new RegExp();
+  var match = re.exec(pairOfLines);
+  return match[1] == match[2];
+}

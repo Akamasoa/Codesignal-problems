@@ -60,3 +60,9 @@ function helloWorld(name) {
 }
 */
 
+function solution(code, args) {
+  var argumentVariants = args.join('|');
+  var re = new RegExp(argumentVariants, "g");
+  var sub = "$";
+  return code.replace(re, sub);
+}

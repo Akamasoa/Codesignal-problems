@@ -56,3 +56,16 @@ function helloWorld(name) {
 }
 */
 
+function solution(notation) {
+  let rows = notation.split('/');
+  let newRows = [];
+  for (let i = 0; i < rows.length; i++) {
+    let row = rows[i];
+    let newRow = '';
+    for (let j = row.length - 1; j >= 0; j--) {
+      newRow += row[j];
+    }
+    newRows.push(newRow);
+  }
+  return newRows.join('/');
+}

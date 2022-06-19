@@ -67,3 +67,6 @@ function helloWorld(name) {
 }
 */
 
+function solution(table, coords) {
+
+}

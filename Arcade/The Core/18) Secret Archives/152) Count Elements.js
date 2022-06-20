@@ -44,3 +44,34 @@ function helloWorld(name) {
 }
 */
 
+let count = 0;
+    let i = 0;
+    while (i < inputString.length) {
+        if (inputString[i] === '"') {
+            i++;
+            while (inputString[i] !== '"') {
+                i++;
+            }
+        } else if (inputString[i] === '[') {
+            i++;
+            while (inputString[i] !== ']') {
+                if (inputString[i] === '"') {
+                    i++;
+                    while (inputString[i] !== '"') {
+                        i++;
+                    }
+                } else if (inputString[i] === ',') {
+                    i++;
+                } else {
+                    i++;
+                }
+            }
+        } else if (inputString[i] === ',') {
+            i++;
+        } else {
+            i++;
+        }
+        count++;
+    }
+    return count;
+}

@@ -44,3 +44,22 @@ function helloWorld(name) {
 }
 */
 
+function solution(expr) {
+let stack = [];
+    let result = 0;
+    let i = 0;
+    while (i < expr.length) {
+        if (expr[i] == '(') {
+            stack.push(i);
+        } else if (expr[i] == ')') {
+            let start = stack.pop();
+            let end = i;
+            let subExpr = expr.substring(start + 1, end);
+            let subResult = eval(subExpr);
+            expr = expr.substring(0, start) + subResult + expr.substring(end + 1);
+            i = start;
+        }
+        i++;
+    }
+    return eval(expr);
+}

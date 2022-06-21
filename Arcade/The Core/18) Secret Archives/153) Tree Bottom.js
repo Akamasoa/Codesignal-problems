@@ -44,3 +44,22 @@ function helloWorld(name) {
 }
 */
 
+function solution(tree) {
+  var result = [];
+    var root = tree.split(' ');
+    var queue = [];
+    queue.push(root);
+    while (queue.length > 0) {
+        var node = queue.shift();
+        if (node[1] != '') {
+            queue.push(node[1].split(' '));
+        }
+        if (node[2] != '') {
+            queue.push(node[2].split(' '));
+        }
+        if (node[0] != '') {
+            result.push(node[0]);
+        }
+    }
+    return result;
+}

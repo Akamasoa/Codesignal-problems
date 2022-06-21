@@ -63,3 +63,6 @@ function helloWorld(name) {
 }
 */
 
+function solution(state) {
+
+}

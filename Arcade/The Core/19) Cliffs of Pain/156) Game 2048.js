@@ -62,3 +62,29 @@ function helloWorld(name) {
 }
 */
 
+let result = grid;
+    let directions = {
+        L: [-1, 0],
+        R: [1, 0],
+        U: [0, -1],
+        D: [0, 1]
+    };
+    for (let i = 0; i < path.length; i++) {
+        let direction = directions[path[i]];
+        let newResult = [];
+        for (let j = 0; j < result.length; j++) {
+            let newRow = [];
+            for (let k = 0; k < result[j].length; k++) {
+                let newValue = result[j][k];
+                let newX = j + direction[0];
+                let newY = k + direction[1];
+                if (newX >= 0 && newX < result.length && newY >= 0 && newY < result[j].length) {
+                    newValue += result[newX][newY];
+                }
+                newRow.push(newValue);
+            }
+            newResult.push(newRow);
+        }
+        result = newResult;
+    }
+    return result;

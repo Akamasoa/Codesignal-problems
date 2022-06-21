@@ -100,3 +100,6 @@ function helloWorld(name) {
 }
 */
 
+function solution(program) {
+
+}

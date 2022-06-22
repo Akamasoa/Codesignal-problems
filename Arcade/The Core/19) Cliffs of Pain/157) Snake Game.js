@@ -76,3 +76,6 @@ function helloWorld(name) {
 }
 */
 
+function solution(gameBoard, commands) {
+
+}

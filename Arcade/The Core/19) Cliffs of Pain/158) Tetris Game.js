@@ -86,3 +86,6 @@ function helloWorld(name) {
 }
 */
 
+function solution(pieces) {
+
+}
